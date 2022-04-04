@@ -73,11 +73,11 @@ void BKServer::_handlePacket(AsyncUDPPacket &packet)
     // Only op codes 0 and 1 exist
     if (opCode == 0)
     {
-        _processStatus(packet.data(), packet.length());
+        _processStatus(packet.data()+1, packet.length()-1);
     }
     else if (opCode == 1)
     {
-        _processUpdate(packet.data(), packet.length());
+        _processUpdate(packet.data()+1, packet.length()-1);
     }
 }
 
