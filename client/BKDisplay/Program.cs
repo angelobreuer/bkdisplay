@@ -10,7 +10,7 @@ hostBuilder.ConfigureAppConfiguration(options => options
     .AddJsonFile("appsettings.json", false));
 
 hostBuilder.ConfigureServices((host, services) => services
-    .AddSingleton<BKClient>()
+    .AddSingleton<IDisplayClient, BKClient>()
     .AddSingleton<IDisplayController, DisplayController>()
     .AddHostedService<HostedDisplayService>()
     .Configure<BKClientOptions>(host.Configuration.GetSection("Client")));
