@@ -10,8 +10,8 @@ using Microsoft.Extensions.Logging;
 public sealed class HostedDisplayService : BackgroundService
 {
     public const int FrameRate = 60;
-    public const int Height = 150;
-    public const int Width = 300;
+    public const int Height = 11;
+    public const int Width = 13;
 
     private readonly CancellationTokenSource _cancellationTokenSource;
     private readonly IDisplayClient _client;
